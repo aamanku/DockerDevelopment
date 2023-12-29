@@ -25,6 +25,14 @@ To get a list of docker containers run
 ```
 docker ps
 ```
+Remove container by
+```
+docker rum name_of_container
+```
+Remove image by
+```
+docker image rm name_of_image
+```
 ## Developement with Docker
 Following this [link](https://docs.docker.com/develop/).
 

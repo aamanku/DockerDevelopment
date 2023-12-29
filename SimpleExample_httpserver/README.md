@@ -54,3 +54,29 @@ Now create a new container as follows
 docker run -p 8000:8000 -it name_of_image
 ```
 
+## Docker File
+Creation of the image can be automated by creating a Dockerfile. The images are built according to the instruction in the Dockerfile. For a reference of commands go to this [link](https://docs.docker.com/engine/reference/builder/).
+
+
+
+#### Python Http Server
+Create a file named `Dockerfile` with following content
+```
+FROM ubuntu:20.04
+
+# run commands
+RUN apt update
+RUN apt install -y python3
+
+# start server
+CMD python3 -m http.server
+```
+Next you build the image by running
+```
+docker build -t "name_of_image:name_of_tag" .
+```
+Then simply run the image with port forwarding
+```
+docker run -p 8000:8000 name_of_image:name_of_tag
+```
+Go to your web browser to view the server `http://localhost:8000`
